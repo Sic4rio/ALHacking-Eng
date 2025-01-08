@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 clear
 mkdir Tools
 clear 
@@ -16,10 +14,10 @@ echo -e '\033[31;40;1m
   github: https://github.com/4lbH4cker
 \033[33;4mVersion:\033[0m 4            \033[33;4mCTRL+C:\033[0m exit          \033[33;4mAuthor:\033[0m 4lbH4cker
 
-\e[37m[1]\e[36m Requirements & Update        \e[37m[2]\e[36m Phishing Tool				
+\e[37m[1]\e[36m Updates & Dependencies        \e[37m[2]\e[36m Phishing Tool				
 \e[37m[3]\e[36m WebCam Hack                   \e[37m[4]\e[36m Subscan			
 \e[37m[5]\e[36m Gmail Bomber		  \e[37m[6]\e[36m DDOS Attack			
-\e[37m[7]\e[36m How to use ?	          \e[37m[8]\e[36m Uninstall downloaded programs		
+\e[37m[7]\e[36m How to Use?	          \e[37m[8]\e[36m Uninstall Downloaded Programs		
 \e[37m[9]\e[36m Ip Info	                  \e[37m[10]\e[36m dorks-eye
 \e[37m[11]\e[36m HackerPro                    \e[37m[12]\e[36m RED_HAWK
 \e[37m[13]\e[36m VirusCrafter                 \e[37m[14]\e[36m Info-Site
@@ -28,13 +26,15 @@ echo -e '\033[31;40;1m
 
 '
 
+
 # Option selection
+
 
 read -p "Transaction number: " islem
 if [[ $islem == 1 || $islem == 01 ]]; then
 clear
 
-echo -e "\033[47;31;5m Installing update and requirements...\033[0m"
+echo -e "\033[47;31;5m Installing updates and dependencies...\033[0m"
 sleep 5
 pkg install git -y
 pkg install python python3 -y
@@ -71,7 +71,7 @@ echo -e "\033[47;3;35m Installation may take some time\033[0m"
 sleep 3
 git clone https://github.com/zidansec/subscan
 cd subscan
-read -p "Enter a domain, e.g. (example.com): " sc
+read -p "Enter a domain e.g. (example.com): " sc
 ./subscan $sc
        
 elif [[ $islem == 5 || $islem == 05 ]]; then
@@ -84,8 +84,8 @@ cd fast-mail-bomber/
 mv config.example.php config.php
 php index.php update-providers
 rm -rf data/nodes.json data/dead_providers.json
-echo -e "\033[47;3;35m This installation will take a long time\033[0m"
-echo -e "\033[47;3;35m To stop, press Ctrl+C\033[0m"
+echo -e "\033[47;3;35m This installation will take a lot of time\033[0m"
+echo -e "\033[47;3;35m To stop press Ctrl+C\033[0m"
 sleep 4
 php index.php update-nodes
 php index.php refine-nodes
@@ -103,19 +103,20 @@ git clone https://github.com/palahsu/DDoS-Ripper.git
 cd DDoS-Ripper
 python3 DRipper.py
 echo ""
-echo -e "\033[47;3;35m Before using it, hide your IP\033[0m"
+echo -e "\033[47;3;35m Before using, hide your IP\033[0m"
 
 elif [[ $islem == 7 || $islem == 07 ]]; then
 clear
 echo "Youtube Video: https://www.youtube.com/watch?v=zgdq6ErscqY"
 python3 -m webbrowser https://www.youtube.com/watch?v=zgdq6ErscqY
 sleep 10
-echo "Please wait for 10 seconds"
+echo "Wait for 10 seconds"
 bash alhack.sh
 
+ 
 elif [[ $islem == 8 || $islem == 08 ]]; then
 clear
-echo -e "\033[47;3;35m UNINSTALLING DOWNLOADED PROGRAMS...\033[0m"
+echo -e "\033[47;3;35m REMOVING DOWNLOADED PROGRAMS...\033[0m"
 sleep 3 
 rm -rf Tools
 
@@ -205,26 +206,44 @@ clear
 echo -e "\033[47;3;35m Installation may take some time\033[0m"
 sleep 3
 cd Tools
-git clone https://github.com/Hackman404/Facebash.git
-cd Facebash
-bash start.sh
+git clone https://github.com/fu8uk1/facebash
+cd facebash
+bash install.sh
+chmod +x facebash.sh
+tor
+sudo ./facebash.sh
+
 
 elif [[ $islem == 17 || $islem == 017 ]]; then
 clear
 echo -e "\033[47;3;35m Installation may take some time\033[0m"
 sleep 3
 cd Tools
-git clone https://github.com/d3vil-xD/darkarmy.git
-cd darkarmy
-python3 darkarmy.py
+pkg install git
+pkg install python2
+apt install git
+apt install python2
+git clone https://github.com/D4RK-4RMY/DARKARMY
+cd DARKARMY
+chmod +x darkarmy.py
+python2 darkarmy.py
 
 elif [[ $islem == 18 || $islem == 018 ]]; then
 clear
-echo -e "\033[47;3;35m Installing...\033[0m"
+echo -e "\033[47;3;35m The installation may take some time\033[0m"
+echo -e "\033[47;3;35m This tool will require you to be (ROOT)\033[0m"
 sleep 3
 cd Tools
-git clone https://github.com/htr-tech/Auto-IP-Changer.git
-cd Auto-IP-Changer
-bash auto-ip.sh
+sudo apt-get install tor
+pip3 install requests
+git clone https://github.com/FDX100/Auto_Tor_IP_changer.git
+cd Auto_Tor_IP_changer
+echo -e "\033[47;3;35m Go to your browser / change your proxy (sock proxy) to 127.0.0.1:9050\033[0m"
+sleep 8
+python3 install.py
 
+
+else
+    echo "Invalid choice, please select a valid option."
+    bash alhack.sh
 fi
